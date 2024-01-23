@@ -33,7 +33,6 @@ public class UDPReceive : MonoBehaviour
         client = new UdpClient(port);
         while (startRecieving)
         {
-
             try
             {
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
@@ -48,10 +47,10 @@ public class UDPReceive : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnApplicationQuit()
     {
         client.Close();
     }
-
+    */
 }

@@ -29,6 +29,8 @@ public class HandManager : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
+    private OneEuroFilter<Vector3>[] vector3Filter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,9 @@ public class HandManager : MonoBehaviour
         tiempos_iniciales = new float[27];
 
         ajuste = new Vector3(-0.55f, +1.10f, +1.70f);
+
+        vector3Filter = new OneEuroFilter<Vector3>[27];
+        for (int i = 0; i < vector3Filter.Length; i++) vector3Filter[i] = new OneEuroFilter<Vector3>(60.0f); // freq, mincutoff, beta, dcutoff
 
     }
 
@@ -120,39 +125,39 @@ public class HandManager : MonoBehaviour
 
 
         // Send calculated points to the hand model
-        sendToHandModel(destination[26], handPoints[0]);
-        sendToHandModel(destination[0], handPoints[0]);
+        sendToHandModel(26, 0);
+        sendToHandModel(0, 0);
         // Index
-        sendToHandModel(destination[1], handPoints[21]);
-        sendToHandModel(destination[2], handPoints[5]);
-        sendToHandModel(destination[3], handPoints[6]);
-        sendToHandModel(destination[4], handPoints[7]);
-        sendToHandModel(destination[5], handPoints[8]);
+        sendToHandModel(1, 21);
+        sendToHandModel(2, 5);
+        sendToHandModel(3, 6);
+        sendToHandModel(4, 7);
+        sendToHandModel(5, 8);
         // Little
-        sendToHandModel(destination[6], handPoints[24]);
-        sendToHandModel(destination[7], handPoints[17]);
-        sendToHandModel(destination[8], handPoints[18]);
-        sendToHandModel(destination[9], handPoints[19]);
-        sendToHandModel(destination[10], handPoints[20]);
+        sendToHandModel(6, 24);
+        sendToHandModel(7, 17);
+        sendToHandModel(8, 18);
+        sendToHandModel(9, 19);
+        sendToHandModel(10, 20);
         // Middle
-        sendToHandModel(destination[11], handPoints[22]);
-        sendToHandModel(destination[12], handPoints[9]);
-        sendToHandModel(destination[13], handPoints[10]);
-        sendToHandModel(destination[14], handPoints[11]);
-        sendToHandModel(destination[15], handPoints[12]);
+        sendToHandModel(11, 22);
+        sendToHandModel(12, 9);
+        sendToHandModel(13, 10);
+        sendToHandModel(14, 11);
+        sendToHandModel(15, 12);
         // Palm
-        sendToHandModel(destination[16], handPoints[25]);
+        sendToHandModel(16, 25);
         // Ring
-        sendToHandModel(destination[17], handPoints[23]);
-        sendToHandModel(destination[18], handPoints[13]);
-        sendToHandModel(destination[19], handPoints[14]);
-        sendToHandModel(destination[20], handPoints[15]);
-        sendToHandModel(destination[21], handPoints[16]);
+        sendToHandModel(17, 23);
+        sendToHandModel(18, 13);
+        sendToHandModel(19, 14);
+        sendToHandModel(20, 15);
+        sendToHandModel(21, 16);
         // Thumb
-        sendToHandModel(destination[22], handPoints[1]);
-        sendToHandModel(destination[23], handPoints[2]);
-        sendToHandModel(destination[24], handPoints[3]);
-        sendToHandModel(destination[25], handPoints[4]);
+        sendToHandModel(22, 1);
+        sendToHandModel(23, 2);
+        sendToHandModel(24, 3);
+        sendToHandModel(25, 4);
         // Adjust wrist rotation
         adjustWrist(destination[0], destination[11], destination[7], handedness);
 
@@ -190,9 +195,9 @@ public class HandManager : MonoBehaviour
         a.transform.rotation = orientation;
     }
 
-    void sendToHandModel(GameObject a, GameObject b)
+    void sendToHandModel(int a, int b)
     {
-        a.transform.position = b.transform.position / 1000.0f + ajuste;
+        destination[a].transform.position = vector3Filter[b].Filter(handPoints[b].transform.position / 1000.0f + ajuste);
     }
 
 }

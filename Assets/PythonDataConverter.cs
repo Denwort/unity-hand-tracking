@@ -19,7 +19,7 @@ public class PythonDataConverter : MonoBehaviour
     public UDPReceive udpReceive;
     public string leftData;
     public string rightData;
-    public HandManager leftHandReciever;
+    public HandManagerRAW leftHandReciever;
     public HandManager rightHandReciever;
 
     // Start is called before the first frame update
