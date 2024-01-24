@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class HandManager : MonoBehaviour
+public class HandManagerOLD : MonoBehaviour
 {
     public GameObject[] handPoints;
     public string data;
