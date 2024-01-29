@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bowling.unity
+    guid: 904eea5d669b0b644acf50f1d95027ea
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5dda62f5b9d4d1145bcdd730b90267e2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1778c02f64a28ab4f846b6a6aa337312, type: 2}

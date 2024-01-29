@@ -47,10 +47,10 @@ public class UDPReceive : MonoBehaviour
             }
         }
     }
-    /*
+    
     private void OnApplicationQuit()
     {
         client.Close();
     }
-    */
+    
 }

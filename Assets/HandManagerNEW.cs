@@ -25,7 +25,8 @@ public class HandManagerNEW : MonoBehaviour
         input = new Vector3[21];
         vector3Filter = new OneEuroFilter<Vector3>[27]; 
         for (int i = 0; i < vector3Filter.Length; i++) vector3Filter[i] = new OneEuroFilter<Vector3>(60.0f); // freq, mincutoff, beta, dcutoff
-        offset = new Vector3(0.8f,2.0f,1.6f);
+        //offset = new Vector3(0.8f, 2.0f, 1.6f);
+        offset = new Vector3(-0.7f,0.8f,1.1f);
         
         //getDistance(0, 1);
         //getDistance(1, 2);
@@ -71,8 +72,8 @@ public class HandManagerNEW : MonoBehaviour
         string[] points = data.Split(",");
         if (points.Length != 63) return; // Hand points data incomplete
         for (int i = 0; i < 21; i++)
-            //input_coordenadas[i] = new Vector3(float.Parse(points[i * 3]) *-1.0f, float.Parse(points[i * 3 + 1]), float.Parse(points[i * 3 + 2]) * -1.0f );
-            input[i] = new Vector3(float.Parse(points[i * 3]) * -1.0f, float.Parse(points[i * 3 + 1]) * -1.0f, float.Parse(points[i * 3 + 2]) * -1.0f);
+            //input[i] = new Vector3(float.Parse(points[i * 3]) * -1.0f, float.Parse(points[i * 3 + 1]) * -1.0f, float.Parse(points[i * 3 + 2]) * -1.0f);
+            input[i] = new Vector3(float.Parse(points[i * 3]) * +1.0f, float.Parse(points[i * 3 + 1]) * +1.0f, float.Parse(points[i * 3 + 2]) * -1.0f);
 
         // handPoints[9].transform.position = input_coordenadas[9] + ajuste;
         // Set wrist coordinates
@@ -205,7 +206,7 @@ public class HandManagerNEW : MonoBehaviour
 
     void sendToHandModel(int a, int b)
     {
-        handPoints[a].transform.position = vector3Filter[b].Filter(miniHand[b].transform.position);
+        handPoints[a].transform.position += (miniHand[b].transform.position); // vector3Filter[b].Filter(miniHand[b].transform.position);
     }
 
     void aimTo(int a, int b)
