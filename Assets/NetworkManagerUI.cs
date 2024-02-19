@@ -6,22 +6,26 @@ using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class NetworkManagerUI : MonoBehaviour
+public class NetworkManagerUI : NetworkBehaviour
 {
     /*
     [SerializeField] private Button hostBtn;
     [SerializeField] private Button clientBtn;
     */
 
-    private bool pcAssigned;
+    //private bool pcAssigned;
 
     [SerializeField] TextMeshProUGUI ipAddressText;
     [SerializeField] TMP_InputField ip;
 
     [SerializeField] string ipAddress;
     [SerializeField] UnityTransport transport;
+
+    public GameObject menu; // Assign in inspector
+    private bool isShowing = true;
 
     /*
     private void Awake()
@@ -41,7 +45,7 @@ public class NetworkManagerUI : MonoBehaviour
     {
         ipAddress = "0.0.0.0";
         SetIpAddress(); // Set the Ip to the above address
-        pcAssigned = false;
+        //pcAssigned = false;
         //InvokeRepeating("assignPlayerController", 0.1f, 0.1f);
     }
 
@@ -78,6 +82,12 @@ public class NetworkManagerUI : MonoBehaviour
         print(ipAddress);
         SetIpAddress();
         NetworkManager.Singleton.StartClient();
+    }
+
+    public void Hide()
+    {
+        isShowing = !isShowing;
+        menu.SetActive(isShowing);
     }
 
 }

@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 #if XR_HANDS_1_1_OR_NEWER
 using UnityEngine.XR.Hands;
+using UnityEngine.XR.Hands.Processing;
 #endif
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
@@ -178,7 +179,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
             {
                 return false;
             }
-
             var wristToTip = tipPose.position - wristPose.position;
             var wristToProximal = proximalPose.position - wristPose.position;
             return wristToProximal.sqrMagnitude >= wristToTip.sqrMagnitude;

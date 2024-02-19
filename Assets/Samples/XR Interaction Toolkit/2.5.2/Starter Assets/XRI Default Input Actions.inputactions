@@ -1646,6 +1646,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9ac0339c-3b16-4634-913f-9d0d982fd153",
+                    "path": "*/{UserPresence}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "dd433817-216c-46b9-8dd3-f3a4ea1767b9",
                     "path": "<XRController>{RightHand}/{Grip}",
                     "interactions": "",

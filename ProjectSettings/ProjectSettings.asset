@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: IALAB
-  productName: pruebita01
+  productName: game
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -140,10 +140,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 3098522234401950075, guid: 5dda62f5b9d4d1145bcdd730b90267e2, type: 2}
-  - {fileID: 11400000, guid: d71b9eebf9ec00f42b2263eaaef8b030, type: 2}
-  - {fileID: -5306609862870971642, guid: 1778c02f64a28ab4f846b6a6aa337312, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

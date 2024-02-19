@@ -6,9 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Bowling.unity
+    path: Assets/Scenes/Cats.unity
     guid: 904eea5d669b0b644acf50f1d95027ea
+  - enabled: 0
+    path: Assets/Scenes/TicTacToe.unity
+    guid: 20173439a4661ad49bf51d143cc0d08f
+  - enabled: 0
+    path: Assets/Scenes/Piano.unity
+    guid: 0b005c148a2f61442812d021bae660eb
+  - enabled: 1
+    path: Assets/Scenes/BasicHands.unity
+    guid: 9c229980062ec914a81635d147cfed76
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6c733f2311717e542bbdb741827e1a17, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5dda62f5b9d4d1145bcdd730b90267e2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1778c02f64a28ab4f846b6a6aa337312, type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: d71b9eebf9ec00f42b2263eaaef8b030, type: 2}

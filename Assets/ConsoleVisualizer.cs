@@ -34,7 +34,7 @@ namespace DebugStuff
         {
             //if (!Application.isEditor) //Do not display in editor ( or you can use the UNITY_EDITOR macro to also disable the rest)
             {
-                myLog = GUI.TextArea(new Rect(10, 150, Screen.width - 10, Screen.height - 10), myLog);
+                myLog = GUI.TextArea(new Rect(10, 400, Screen.width - 10, Screen.height - 400), myLog);
             }
         }
         //#endif
